@@ -1,6 +1,6 @@
 {
-  "name": "codegradxlib",
-  "version": "2.0.19",
+  "name": "codegradxinquiry",
+  "version": "2.0.20",
   "description": "Complements to the CodeGradXlib Javascript Library to interact with the CodeGradX infrastructure. Runs on Node.js or within browsers",
   "keywords": [
     "CodeGradX",
@@ -47,7 +47,7 @@
     }
   ],
   "bugs": {
-    "url": "https://github.com/ChristianQueinnec/CodeGradXlib/issues"
+    "url": "https://github.com/ChristianQueinnec/CodeGradXinquiry/issues"
   },
-  "homepage": "https://github.com/ChristianQueinnec/CodeGradXlib#readme"
+  "homepage": "https://github.com/ChristianQueinnec/CodeGradXinquiry#readme"
 }
