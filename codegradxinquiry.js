@@ -1,5 +1,5 @@
 // CodeGradXinquiry
-// Time-stamp: "2018-12-07 09:10:16 queinnec"
+// Time-stamp: "2018-12-07 09:22:36 queinnec"
 
 /** Complements to CodeGradXlib. These complements require to be an
     admin of the CodeGradX infrastructure.
@@ -10,11 +10,12 @@
 @see {@link http://codegradx.org/|CodeGradX} site.
 */
 
-import CodeGradX from 'codegradxlib';
+const CodeGradX = require('codegradxlib');
+//import CodeGradX from 'codegradxlib';
 
 /** Re-export the `CodeGradX` object */
-//module.exports = CodeGradX;
-export default CodeGradX;
+module.exports = CodeGradX;
+//export default CodeGradX;
 
 /** Get information about someone. This method requires to be admin.
 
@@ -30,7 +31,6 @@ export default CodeGradX;
 CodeGradX.State.prototype.getPerson = function (personid) {
     const state = CodeGradX.getCurrentState();
     state.debug('getPerson1', personid);
-    const person = new CodeGradX.User({personid});
     return state.sendAXServer('x', {
         path: `/inquiry/person/${personid}`,
         method: 'POST',
@@ -89,7 +89,6 @@ CodeGradX.State.prototype.getMarkEngines = function () {
 
 CodeGradX.State.prototype.getAllNotifications = function (count, till) {
     let state = CodeGradX.getCurrentState();
-    let user = this;
     state.debug('getAllNotifications1', count, till);
     function processResponse (response) {
         state.debug('getAllNotifications2', response);

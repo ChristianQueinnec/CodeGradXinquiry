@@ -1,4 +1,4 @@
-# Time-stamp: "2018-12-07 09:12:44 queinnec"
+# Time-stamp: "2018-12-07 09:23:11 queinnec"
 
 work : lint tests
 clean :
@@ -19,7 +19,7 @@ nsp+snyk :
 # Caution: npm takes the whole directory that is . and not the sole
 # content of CodeGradXinquiry.tgz 
 
-publish : lint nsp+snyk bower.json clean
+publish : lint nsp+snyk clean
 	git status .
 	-git commit -m "NPM publication `date`" .
 	git push
