@@ -1,4 +1,4 @@
-# Time-stamp: "2018-12-07 09:23:11 queinnec"
+# Time-stamp: "2019-03-26 18:32:21 queinnec"
 
 work : lint tests
 clean :
@@ -8,6 +8,11 @@ clean :
 
 lint :
 	eslint codegradxinquiry.js
+
+update :
+	-rm -rf node_modules
+	npm install codegradxlib@`jq -r .version < ../CodeGradXlib/package.json`
+	npm install
 
 nsp+snyk :
 	npm link nsp
@@ -19,7 +24,7 @@ nsp+snyk :
 # Caution: npm takes the whole directory that is . and not the sole
 # content of CodeGradXinquiry.tgz 
 
-publish : lint nsp+snyk clean
+publish : lint clean
 	git status .
 	-git commit -m "NPM publication `date`" .
 	git push
